@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SVG Animation</title>
+
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .logo {
+      width: 220px;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      200% {
+        transform: scale(2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <img src="./Text-for-Individuell-uppgift.svg" class="text" />
+  <img src="./logo.svg" class="logo" />
+</body>
+</html>
