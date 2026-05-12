@@ -8,27 +8,70 @@
     body {
       background: #111;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 40px;
       height: 100vh;
+      overflow: hidden;
+    }
+
+    .text {
+      width: 500px;
+
+      animation:
+        textGlow 2s infinite alternate,
+        textFloat 4s infinite ease-in-out;
     }
 
     .logo {
       width: 220px;
-      animation: pulse 2s infinite ease-in-out;
+      animation: logoPulse 2s infinite ease-in-out;
     }
 
-    @keyframes pulse {
+    @keyframes logoPulse {
       0% {
         transform: scale(1);
       }
 
       50% {
-        transform: scale(1.2);
+        transform: scale(1.15);
       }
 
-      200% {
-        transform: scale(2);
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes textGlow {
+      0% {
+        filter:
+          drop-shadow(0 0 5px #ffd700)
+          drop-shadow(0 0 10px #ffd700);
+
+        opacity: 0.7;
+      }
+
+      100% {
+        filter:
+          drop-shadow(0 0 15px #ffd700)
+          drop-shadow(0 0 35px #ffd700);
+
+        opacity: 1;
+      }
+    }
+
+    @keyframes textFloat {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+
+      100% {
+        transform: translateY(0);
       }
     }
   </style>
@@ -38,5 +81,6 @@
 
   <img src="./Text-for-Individuell-uppgift.svg" class="text" />
   <img src="./logo.svg" class="logo" />
+
 </body>
 </html>
